@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    hostname: mosquitto
+    container_name: mosquitto
+    build:
+      context: .docker/mosquitto
+      dockerfile: Dockerfile
+    expose:
+      - "1883"
+      - "9001"
+    ports:
+      - "1883:1883"
+      - "9001:9001"
